@@ -1,12 +1,20 @@
 package tech.ada.locadora.modelo.veiculo;
 
+import tech.ada.locadora.grupo_veiculo.GrupoVeiculo;
+
 import java.math.BigDecimal;
 
 public class Moto extends Veiculo {
 
     private BigDecimal valor = new BigDecimal("100");
 
-    public Moto(String placa, String modelo, String marca, Boolean disponivel) {
-        super(placa, modelo, marca, disponivel);
+    public Moto(int id, String placa, String modelo, String marca, int anoFabricacao, Boolean disponivel, GrupoVeiculo grupoVeiculo, BigDecimal valor) {
+        super(id, placa, modelo, marca, anoFabricacao, disponivel, grupoVeiculo);
+        this.valor = valor;
+    }
+
+    @Override
+    public BigDecimal getPrecoGrupo() {
+        return null;
     }
 }
